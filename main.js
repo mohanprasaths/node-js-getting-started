@@ -10,6 +10,7 @@ app.use(bodyParser.json());
 
 app.use(function(req, res, next) {
 	  res.header("Access-Control-Allow-Headers","*")
+	  res.header('Access-Control-Allow-Origin','*')
 
 
   next();
@@ -51,7 +52,9 @@ app.get('/getAllNames',function(req,res,next){
 	var allNames = {
 		names : names
 	}
-		  res.header("Access-Control-Allow-Headers",*)
+		  res.header("Access-Control-Allow-Headers",'*')
+		  	
+
 
 	res.send(allNames)
 })
