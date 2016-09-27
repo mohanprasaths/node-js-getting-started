@@ -8,6 +8,13 @@ var count = 0;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.use(function(req, res, next) {
+	  res.header("Access-Control-Allow-Headers","*")
+
+
+  next();
+});
+
 var names=[]
 var registerEventHandler =  function(name,mailid,password){
 	console.log(name)
@@ -17,11 +24,12 @@ var eventEmitter = new events.EventEmitter();
 eventEmitter.on("registerEvent",registerEventHandler);
 
 
-app.get('/',function(req,res){
+app.get('/',function(req,res,next){
+
 	res.send("helloworld")
 })
 
-app.get("/registeruser",function(req,res){
+app.get("/registeruser",function(req,res,next){
 	count++;
 	console.log("in node js")
 	var response = {
@@ -31,7 +39,7 @@ app.get("/registeruser",function(req,res){
 	res.send(JSON.stringify(response))
 })
 
-app.post("/getData",function(req,res){
+app.post("/getData",function(req,res,next){
 
 	names.push(req.body.name)
 	console.log(names)
@@ -39,10 +47,12 @@ app.post("/getData",function(req,res){
 
 })
 
-app.get('/getAllNames',function(req,res){
+app.get('/getAllNames',function(req,res,next){
 	var allNames = {
 		names : names
 	}
+		  res.header("Access-Control-Allow-Headers",*)
+
 	res.send(allNames)
 })
  
