@@ -7,17 +7,17 @@ var options = {
 
 var pgp = require('pg-promise')(options);
 var dataBaseConfig = {
-   "host": "ec2-54-235-95-102.compute-1.amazonaws.com",
+   "host": "ec2-184-73-210-189.compute-1.amazonaws.com",
   "port": 5432,
-  "database": "d6om08jbohqqjd",
-  "user": "lgrvccnnwiaopb",
-  "password" : "zaV5HFLYTtmGcmBFOG6dE0pubM",
+  "database": "d38j30d90hmn0t",
+  "user": "labwmhfuefaski",
+  "password" : "4dadfccb1b1eb34507a58063fe96681702ce2ec3735175ecc99c33c8a99ff555",
       ssl: true
 
 
 }
 //var connectionString = 'postgres://postgres:a@localhost:5432/namesboard';
-var connectionString = 'postgres://lgrvccnnwiaopb:zaV5HFLYTtmGcmBFOG6dE0pubM@ec2-54-235-95-102.compute-1.amazonaws.com:5432/d6om08jbohqqjd'
+var connectionString = 'postgres://labwmhfuefaski:4dadfccb1b1eb34507a58063fe96681702ce2ec3735175ecc99c33c8a99ff555@ec2-184-73-210-189.compute-1.amazonaws.com:5432/d38j30d90hmn0t'
 var db = pgp(dataBaseConfig);
 
 function getAllNames(req,res,next){
